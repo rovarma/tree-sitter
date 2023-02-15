@@ -15,7 +15,7 @@ macro(DeclareMain LibraryName SourceDirectory)
 	add_library(${LibraryName} STATIC ${${LibraryName}_SOURCES})
 
 	target_include_directories(${LibraryName} PUBLIC "${SourceDirectory}")	
-	target_compile_options(${LibraryName} PRIVATE "/Zi" "/Oy-")
+	target_compile_options(${LibraryName} PRIVATE "/Zi" "/Oy-" "/EHsc")
 	target_link_options(${LibraryName} PRIVATE /DEBUG:FULL)
 endmacro()
 
@@ -32,8 +32,8 @@ macro(DeclareLanguage LibraryName SourceDirectory HasScanner)
 	add_library(${LibraryName} STATIC ${${LibraryName}_SOURCES} ${${LibraryName}_SCANNER_SOURCES})
 	
 	target_include_directories(${LibraryName} PUBLIC "${SourceDirectory}")	
-	target_compile_options(${LibraryName} PRIVATE "/Zi" "/Oy-")
-	target_link_options(${LibraryName} PRIVATE /DEBUG:FULL)
+	target_compile_options(${LibraryName} PRIVATE "/Zi" "/Oy-" "/EHsc")
+	target_link_options(${LibraryName} PRIVATE /DEBUG:FULL)	
 endmacro()
 
 set(SourceDirectory ${CMAKE_CURRENT_LIST_DIR}/lib/src)
