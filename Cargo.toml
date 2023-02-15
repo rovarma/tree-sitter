@@ -3,5 +3,10 @@ default-members = ["cli"]
 
 members = ["cli", "lib"]
 
+[profile.dev]
+debug = true
+strip = "none"
+
 [profile.release]
-strip = true
+debug = true
+strip = "none"

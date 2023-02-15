@@ -24,4 +24,5 @@ docs/assets/js/tree-sitter.js
 *.obj
 *.exp
 *.lib
+!tree_sitter_highlight.lib
 *.wasm
