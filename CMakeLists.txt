@@ -42,7 +42,11 @@ DeclareMain(tree-sitter ${CMAKE_CURRENT_LIST_DIR}/lib/src)
 target_include_directories(tree-sitter PUBLIC "${CMAKE_CURRENT_LIST_DIR}/lib/include")
 
 DeclareLanguage(tree-sitter-c ${CMAKE_CURRENT_LIST_DIR}/languages/tree-sitter-c/src FALSE)
-
 DeclareLanguage(tree-sitter-cpp ${CMAKE_CURRENT_LIST_DIR}/languages/tree-sitter-cpp/src TRUE)
+DeclareLanguage(tree-sitter-css ${CMAKE_CURRENT_LIST_DIR}/languages/tree-sitter-css/src TRUE)
+DeclareLanguage(tree-sitter-html ${CMAKE_CURRENT_LIST_DIR}/languages/tree-sitter-html/src TRUE)
+DeclareLanguage(tree-sitter-javascript ${CMAKE_CURRENT_LIST_DIR}/languages/tree-sitter-javascript/src TRUE)
+
+target_link_libraries(tree-sitter PUBLIC tree-sitter-c tree-sitter-cpp tree-sitter-css tree-sitter-html tree-sitter-javascript)
 
 
