@@ -19,6 +19,7 @@ macro(DeclareMain LibraryName SourceDirectory)
 	target_compile_options(${LibraryName} PRIVATE "/Zi" "/Oy-" "/EHsc")
 	target_link_options(${LibraryName} PRIVATE /DEBUG:FULL)
 	target_link_libraries(${LibraryName} PUBLIC debug "${CMAKE_CURRENT_LIST_DIR}/highlight/lib/debug/tree_sitter_highlight.lib" optimized "${CMAKE_CURRENT_LIST_DIR}/highlight/lib/release/tree_sitter_highlight.lib")
+	target_link_libraries(${LibraryName} PUBLIC Ws2_32 Bcrypt Userenv)
 endmacro()
 
 macro(DeclareLanguage LibraryName SourceDirectory HasScanner)
