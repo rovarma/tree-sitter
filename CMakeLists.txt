@@ -27,7 +27,7 @@ macro(DeclareLanguage LibraryName SourceDirectory HasScanner)
 	
 	set(${LibraryName}_SCANNER_SOURCES)
 	if (${HasScanner})
-		file(GLOB ${LibraryName}_SCANNER_SOURCES CONFIGURE_DEPENDS ${SourceDirectory}/scanner.cc)
+		file(GLOB ${LibraryName}_SCANNER_SOURCES CONFIGURE_DEPENDS ${SourceDirectory}/scanner.cc ${SourceDirectory}/scanner.c)
 	endif()
 	
 	source_group(TREE ${SourceDirectory} FILES ${${LibraryName}_SOURCES} ${${LibraryName}_SCANNER_SOURCES})
